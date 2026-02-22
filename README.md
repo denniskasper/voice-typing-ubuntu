@@ -270,6 +270,8 @@ Your config (`~/.config/voxtype/config.toml`) and downloaded models (`~/.local/s
 
 ## Uninstall
 
+> **Note:** These steps have not been tested yet. Review before running.
+
 ```bash
 systemctl --user disable --now voxtype ydotool
 rm ~/.config/systemd/user/voxtype.service ~/.config/systemd/user/ydotool.service
