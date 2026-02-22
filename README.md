@@ -111,7 +111,7 @@ type_delay_ms = 0
 [output.notification]
 on_recording_start = false
 on_recording_stop = false
-on_transcription = true
+on_transcription = false
 EOF
 ```
 
