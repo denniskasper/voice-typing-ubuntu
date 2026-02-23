@@ -232,13 +232,14 @@ systemctl --user restart voxtype
 
 ## Troubleshooting
 
-| Problem                               | Fix                                                                                             |
-| ------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `ydotool type` does nothing           | Check `systemctl --user status ydotool` — the daemon must be running                            |
-| Permission denied on `/dev/uinput`    | Verify you're in the `input` group: `groups $USER`. Log out and back in after `usermod`.        |
-| VoxType not typing (but transcribing) | ydotoold may not be running. Check with `systemctl --user status ydotool`                       |
-| Wrong microphone                      | Change `device` in `config.toml` or use `arecord -l` to list devices                            |
-| Transcription quality is poor         | Try `model = "small.en"` or `model = "medium.en"` in config (larger = slower but more accurate) |
+| Problem                                  | Fix                                                                                                                                    |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `ydotool type` does nothing              | Check `systemctl --user status ydotool` — the daemon must be running                                                                   |
+| Permission denied on `/dev/uinput`       | Verify you're in the `input` group: `groups $USER`. Log out and back in after `usermod`.                                               |
+| VoxType not typing (but transcribing)    | ydotoold may not be running. Check with `systemctl --user status ydotool`                                                              |
+| Wrong microphone                         | Change `device` in `config.toml` or use `arecord -l` to list devices                                                                   |
+| Transcription quality is poor            | Try `model = "small.en"` or `model = "medium.en"` in config (larger = slower but more accurate)                                        |
+| GPU enabled but logs show `no GPU found` | Your user may not be in the `render` group. Check with `groups $USER`. Fix: `sudo usermod -aG render $USER`, then log out and back in. |
 
 ## Updating VoxType
 
